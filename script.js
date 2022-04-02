@@ -10,11 +10,13 @@ const questions = [
         type: 'input',
         message: "What is the title of your project?",
         name:'title',
+        default: 'Project Title',
     },
     {
         type: 'input',
         message: "Write a description of your project",
         name: 'description',
+        default: 'Project Description',
     },
     {
         type: 'input',
@@ -29,8 +31,8 @@ const questions = [
     {
         type: 'list',
         message: "Choose a lisence for your project",
-        choices: ['None','Mozilla Public License 2.0','Apache License 2.0','MIT License','Boost Software License 1.0'],
-        name: 'lisence',
+        choices: ['Mozilla Public License 2.0','Apache License 2.0','MIT License','Boost Software License 1.0', 'None'],
+        name: 'license',
     },
     {
         type: 'input',
@@ -46,18 +48,20 @@ const questions = [
         type: 'input',
         message: "What is your Github username?",
         name: 'github',
+        default: "L-Stew206",
     },
     {
         type: 'input',
         message: "What is your email address?",
         name: 'email',
+        default:"luketheforce206@gmail.com",
     },
 ]
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init( ) {
+function writeReadMe( ) {
     inquirer
     .prompt ( questions )
     .then ( function (response) {
@@ -72,4 +76,4 @@ function init( ) {
 };
 
 // Function call to initialize app
-init();
+writeReadMe();
